@@ -9,7 +9,8 @@ class RegistrationPage:
 
     @staticmethod
     def open():
-        browser.open('/automation-practice-form').wait_until(have.title('DEMOQA'))
+        # browser.open('/automation-practice-form').wait_until(have.title('DEMOQA'))
+        browser.open('https://demoqa.com/automation-practice-form').wait_until(have.title('DEMOQA'))
 
     @staticmethod
     def form_filling(user: User):
