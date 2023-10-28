@@ -7,16 +7,20 @@ import allure
 
 
 class RegistrationPage:
+    def __init__(self):
+        self.first_name = browser.element('[id="firstName"]')
+        self.last_name = browser.element('[id="lastName"]')
+        ...
+
     @staticmethod
     def open():
         with allure.step('Открываем главную страницу'):
             browser.open('/automation-practice-form').wait_until(have.title('DEMOQA'))
 
-    @staticmethod
-    def form_filling(user: User):
+    def form_filling(self, user: User):
         with allure.step('Заполняем и отправляем форму'):
-            browser.element('[id="firstName"]').type(user.first_name)
-            browser.element('[id="lastName"]').type(user.last_name)
+            self.first_name.type(user.first_name)
+            self.last_name.type(user.last_name)
             browser.all('[name=gender]').element_by(have.value(user.gender)).element(
                 '..'
             ).click()
