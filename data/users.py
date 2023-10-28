@@ -8,6 +8,7 @@ class Subject(Enum):
     chemistry = 'Chemistry'
     english = 'English'
     biology = 'Biology'
+    hindi = 'Hindi'
 
 
 @dataclasses.dataclass
@@ -18,7 +19,7 @@ class User:
     mobile: str
     email: str | None
     date_of_birth: str | None
-    subjects: List[Subject] | None
+    subject: List[Subject] | None
     hobbies: str | None
     image: str | None
     current_address: str | None

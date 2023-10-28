@@ -10,6 +10,8 @@ class RegistrationPage:
     def __init__(self):
         self.first_name = browser.element('[id="firstName"]')
         self.last_name = browser.element('[id="lastName"]')
+
+        self.subject = browser.element('[id="subjectsInput"]')
         ...
 
     @staticmethod
@@ -41,10 +43,11 @@ class RegistrationPage:
                 browser.element(
                     f'.react-datepicker__day--{day}:not(.react-datepicker__day--outside-month)'
                 ).click()
-            if user.subjects:
-                browser.element('[id="subjectsInput"]').click().type(
-                    user.subjects
-                ).press_enter()
+            if user.subject:
+                # browser.element('[id="subjectsInput"]').click().type(
+                #     user.subjects
+                # ).press_enter()
+                self.subject.click().type(user.subject).press_enter()
             if user.hobbies:
                 browser.all('.custom-checkbox').element_by(
                     have.exact_text(user.hobbies)
@@ -78,7 +81,7 @@ class RegistrationPage:
                     user.gender,
                     user.mobile,
                     user.date_of_birth,
-                    user.subjects,
+                    user.subject,
                     user.hobbies,
                     user.image,
                     user.current_address,
