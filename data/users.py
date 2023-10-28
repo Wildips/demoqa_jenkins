@@ -1,4 +1,12 @@
 import dataclasses
+from enum import Enum
+
+
+class Subject(Enum):
+    maths = 'Maths'
+    chemistry = 'Chemistry'
+    english = 'English'
+    biology = 'Biology'
 
 
 @dataclasses.dataclass
@@ -9,7 +17,7 @@ class User:
     mobile: str
     email: str | None
     date_of_birth: str | None
-    subjects: str | None
+    subjects: Subject | None
     hobbies: str | None
     image: str | None
     current_address: str | None
