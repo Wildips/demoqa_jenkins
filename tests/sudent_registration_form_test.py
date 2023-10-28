@@ -13,9 +13,20 @@ def test_student_registration_form():
     allure.dynamic.story("Регистрация пользователя с полным набором атрибутов")
 
     # ARRANGE
-    student = User(first_name='Some', last_name='User', email='some@user.io', gender='Male', mobile='8800008800',
-                   date_of_birth='1 September,1939', subjects='Hindi', hobbies='Sports', image='test.png',
-                   current_address='Far far away', state='Rajasthan', city='Jaipur')
+    student = User(
+        first_name='Some',
+        last_name='User',
+        email='some@user.io',
+        gender='Male',
+        mobile='8800008800',
+        date_of_birth='1 September,1939',
+        subjects='Hindi',
+        hobbies='Sports',
+        image='test.png',
+        current_address='Far far away',
+        state='Rajasthan',
+        city='Jaipur',
+    )
 
     registration_page.open()
 
