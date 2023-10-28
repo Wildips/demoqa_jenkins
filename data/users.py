@@ -1,5 +1,6 @@
 import dataclasses
 from enum import Enum
+from typing import List
 
 
 class Subject(Enum):
@@ -17,7 +18,7 @@ class User:
     mobile: str
     email: str | None
     date_of_birth: str | None
-    subjects: Subject | None
+    subjects: List[Subject] | None
     hobbies: str | None
     image: str | None
     current_address: str | None
